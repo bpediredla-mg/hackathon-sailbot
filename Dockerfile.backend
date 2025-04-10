@@ -1,11 +1,17 @@
-# Backend Dockerfile
 FROM python:3.10-slim
 
 WORKDIR /app
 
+# 🛠 Fix for Apple Silicon architecture compatibility
+ENV CMAKE_ARGS="-DLLAMA_METAL=off -DLLAMA_NATIVE=off -DLLAMA_F16C=off -DLLAMA_AVX2=off -DLLAMA_BUILD_TESTS=off -DLLAMA_BUILD_SERVER=off"
+ENV FORCE_CMAKE=1
+
 COPY backend/requirements.txt requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
+RUN apt-get update && apt-get install -y build-essential cmake git && \
+    pip install --no-cache-dir -r requirements.txt
 
 COPY backend/ backend/
+
+CMD ["huggingface-cli", "download TheBloke/TinyLlama-1.1B-Chat-v1.0-GGUF tinyllama-1.1b-chat-v1.0.Q5_K_M.gguf --local-dir backend/models/tinyllama-gguf/tinyllama.gguf --local-dir-use-symlinks False]
 
 CMD ["python", "backend/app.py"]

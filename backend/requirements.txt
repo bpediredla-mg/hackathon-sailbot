@@ -1,2 +1,8 @@
 Flask
 flask-cors
+beautifulsoup4
+requests
+langchain
+faiss-cpu
+llama-cpp-python
+sentence-transformers

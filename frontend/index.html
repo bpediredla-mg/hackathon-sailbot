@@ -1,11 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Frontend</title>
+  <title>Ask the LLM</title>
   <script defer src="script.js"></script>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Frontend Page</h1>
-  <div id="api-response">Loading...</div>
+  <h1>Ask the LLM</h1>
+  <form id="qa-form">
+    <input type="text" id="question" placeholder="Type your question..." required />
+    <select id="model">
+      <option value="huggingface">Hugging Face</option>
+      <option value="openai">OpenAI</option>
+    </select>
+    <button type="submit">Ask</button>
+  </form>
+  <div id="answer-box"></div>
 </body>
 </html>
