@@ -5,9 +5,8 @@ from langchain.chains import RetrievalQA
 from langchain_community.llms import LlamaCpp
 import os
 
-def load_documents_from_dir(directory):
+def load_documents_from_dir(file_path):
     docs = []
-    file_path = Path(directory)
     with open(file_path, "r", encoding="utf-8") as f:
         docs.append(f.read())
 
@@ -23,7 +22,7 @@ def build_qa_chain():
     retriever = db.as_retriever()
 
     llm = LlamaCpp(
-        model_path="backend/models/tinyllama-gguf/tinyllama.gguf",
+        model_path="models/tinyllama-gguf/tinyllama-1.1b-chat-v1.0.Q5_K_M.gguf",
         n_ctx=1024,
         temperature=0.7,
         verbose=False
