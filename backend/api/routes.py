@@ -11,9 +11,8 @@ def hello():
 @api_blueprint.route("/ask", methods=["POST"])
 def ask():
     question = request.json.get("question")
-    model = request.json.get("model", "huggingface")
     if not question:
         return jsonify({"error": "No question provided"}), 400
-    chain = build_qa_chain(llm_type=model)
+    chain = build_qa_chain()
     answer = chain.run(question)
     return jsonify({"answer": answer})
