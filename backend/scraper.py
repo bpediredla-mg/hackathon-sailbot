@@ -1,6 +1,9 @@
 import requests
 from bs4 import BeautifulSoup
 import os
+from pathlib import Path
+import json
+from trafilatura import fetch_url, extract, html2txt
 
 def scrape_page(url):
     try:
@@ -13,7 +16,7 @@ def scrape_page(url):
 def scrape_urls_to_files(urls, output_dir="backend/data"):
     file_path = Path('output.json')
 
-    for url in enumerate(urls):
+    for url in urls:
         content = scrape_page(url)
 
         if not file_path.exists():
@@ -23,7 +26,7 @@ def scrape_urls_to_files(urls, output_dir="backend/data"):
         with open(file_path, "r") as file:
             data = json.load(file)
     
-        new_entry = {"url": url, "content": text_data}
+        new_entry = {"url": url, "content": content}
         data.append(new_entry)
     
         with open(file_path, "w") as file:
