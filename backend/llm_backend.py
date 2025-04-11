@@ -1,8 +1,8 @@
-from langchain.embeddings import HuggingFaceEmbeddings
-from langchain.vectorstores import FAISS
+from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_community.vectorstores import FAISS
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.chains import RetrievalQA
-from langchain.llms import LlamaCpp
+from langchain_community.llms import LlamaCpp
 import os
 
 def load_documents_from_dir(directory):
