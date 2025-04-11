@@ -17,8 +17,8 @@ def scrape_urls_to_files(urls, output_dir="backend/data"):
         content = scrape_page(url)
 
         if not file_path.exists():
-        with open(file_path, mode='w', encoding='utf-8') as f:
-            json.dump([], f)
+            with open(file_path, mode='w', encoding='utf-8') as f:
+                json.dump([], f)
 
         with open(file_path, "r") as file:
             data = json.load(file)
@@ -44,8 +44,8 @@ if __name__ == "__main__":
         "https://getstarted.meetmarigold.com/engagebysailthru/Content/messaging/email/emco-templates/personalize-data-feeds.html?tocpath=Messaging%7CTemplates%7CEmail%20Composer%20Templates%7C_____5",
         "https://getstarted.meetmarigold.com/engagebysailthru/Content/messaging/email/emco-templates/emco-best-prac.html?tocpath=Messaging%7CTemplates%7CEmail%20Composer%20Templates%7C_____6",
         "https://getstarted.meetmarigold.com/engagebysailthru/Content/messaging/email/emco-templates/google-promo-tab.html?tocpath=Messaging%7CTemplates%7CEmail%20Composer%20Templates%7C_____7",
-        "https://getstarted.meetmarigold.com/engagebysailthru/Content/messaging/email/emco-templates/grow.html?tocpath=Messaging%7CTemplates%7CEmail%20Composer%20Templates%7C_____8"m
+        "https://getstarted.meetmarigold.com/engagebysailthru/Content/messaging/email/emco-templates/grow.html?tocpath=Messaging%7CTemplates%7CEmail%20Composer%20Templates%7C_____8",
         "https://getstarted.meetmarigold.com/engagebysailthru/Content/messaging/email/emco-templates/liveintent-tags.html?tocpath=Messaging%7CTemplates%7CEmail%20Composer%20Templates%7C_____9",
-        "https://getstarted.meetmarigold.com/engagebysailthru/Content/messaging/email/emco-templates/ai-assistant.html?tocpath=Messaging%7CTemplates%7CEmail%20Composer%20Templates%7C_____10"
+        "https://getstarted.meetmarigold.com/engagebysailthru/Content/messaging/email/emco-templates/ai-assistant.html?tocpath=Messaging%7CTemplates%7CEmail%20Composer%20Templates%7C_____10",
     ]
     scrape_urls_to_files(url_list)
