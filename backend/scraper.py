@@ -4,20 +4,31 @@ import os
 
 def scrape_page(url):
     try:
-        response = requests.get(url, timeout=10)
-        soup = BeautifulSoup(response.text, "html.parser")
-        article = soup.find("article") or soup.find("main") or soup.body
-        text = article.get_text(separator="\n", strip=True)
+        raw_data = fetch_url(url)
+        text = extract(raw_data)
         return text
     except Exception as e:
         return f"Error scraping {url}: {str(e)}"
 
 def scrape_urls_to_files(urls, output_dir="backend/data"):
-    os.makedirs(output_dir, exist_ok=True)
-    for i, url in enumerate(urls):
+    file_path = Path('output.json')
+
+    for url in enumerate(urls):
         content = scrape_page(url)
-        with open(f"{output_dir}/page_{i+1}.txt", "w", encoding="utf-8") as f:
-            f.write(content)
+
+        if not file_path.exists():
+        with open(file_path, mode='w', encoding='utf-8') as f:
+            json.dump([], f)
+
+        with open(file_path, "r") as file:
+            data = json.load(file)
+    
+        new_entry = {"url": url, "content": text_data}
+        data.append(new_entry)
+    
+        with open(file_path, "w") as file:
+            json.dump(data, file, indent=4)
+
 
 if __name__ == "__main__":
     url_list = [
