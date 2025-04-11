@@ -7,14 +7,14 @@ import os
 
 def load_documents_from_dir(directory):
     docs = []
-    for filename in os.listdir(directory):
-        if filename.endswith(".txt"):
-            with open(os.path.join(directory, filename), "r", encoding="utf-8") as f:
-                docs.append(f.read())
+    file_path = Path(directory)
+    with open(file_path, "r", encoding="utf-8") as f:
+        docs.append(f.read())
+
     return docs
 
 def build_qa_chain():
-    documents = load_documents_from_dir("backend/data")
+    documents = load_documents_from_dir("output.json")
     splitter = CharacterTextSplitter(chunk_size=750, chunk_overlap=100)
     texts = splitter.create_documents(documents)
 
