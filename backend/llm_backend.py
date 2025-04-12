@@ -23,7 +23,7 @@ def build_qa_chain():
 
     llm = LlamaCpp(
         model_path="models/tinyllama-gguf/tinyllama-1.1b-chat-v1.0.Q5_K_M.gguf",
-        n_ctx=1024,
+        n_ctx=2048,
         temperature=0.7,
         verbose=False
     )
