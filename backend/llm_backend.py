@@ -13,7 +13,7 @@ def load_documents_from_dir(file_path):
     return docs
 
 def build_qa_chain():
-    documents = load_documents_from_dir("output.json")
+    documents = load_documents_from_dir("/app/backend/output.json")
     splitter = CharacterTextSplitter(chunk_size=750, chunk_overlap=100)
     texts = splitter.create_documents(documents)
 
@@ -22,7 +22,7 @@ def build_qa_chain():
     retriever = db.as_retriever()
 
     llm = LlamaCpp(
-        model_path="models/tinyllama-gguf/tinyllama-1.1b-chat-v1.0.Q5_K_M.gguf",
+        model_path="/app/backend/models/tinyllama-gguf/tinyllama-1.1b-chat-v1.0.Q5_K_M.gguf",
         n_ctx=2048,
         temperature=0.7,
         verbose=False

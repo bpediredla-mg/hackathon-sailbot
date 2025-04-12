@@ -1,0 +1,34 @@
+[
+    {
+        "url": "https://getstarted.meetmarigold.com/engagebysailthru/Content/messaging/email/gen-template-info/overview.html?tocpath=Messaging%7CTemplates%7CGeneral%20Template%20Information%7C_____1",
+        "content": "Templates Overview\nBring your message content, user information, user interests, data feed content, and third-party advertising together in a template.\nCreate and edit templates within the platform or by submitting all code and settings via the API.Example uses for triggered and campaign templates are listed below. For more information, see the Campaigns Overview and Triggered Messages Overview pages.\nBefore You Begin\nWhile you can create a template prior to adding one or more Lists of your users to the platform, it is helpful to consider:\n- Who is the audience for this template?\n- When will they receive the template? For example, it may be a campaign template sent after the user signs up for your newsletter or a transactional template sent to the user after completing a purchase.\n- How will content be pulled for this template? See the Date Feeds Overview page for more information on pulling dynamic content.\nNote: If this is your first time building templates, or you're building a new type of template for the first time, be sure to discuss your plans with your Customer Success manager. Your CSM can provide sample template code and ensure you are using best practices for template design and strategy.\nTo get started, see the templates overview, or first review some examples for each template type, below.\nTemplate Type Examples\nThese are just a few examples of what you can do with email templates. Given the large array of options available when sending Campaigns and Triggered Messages, and building templates for each, you can adapt each kind of message to your own needs.Triggered Messages\n- Personalized Welcome Emails\nLeverage your new users' signup data immediately, track the sources of your lead generations, and use Lifecycle Optimizer to create a dynamic welcome message \"flow\" that responds to customer behavior in their first few days! For more information, seeCapturing User Vars on Signup and Lifecycle Optimizer.\n- Purchase Confirmation Emails\nWhen each user purchases a product or service, automatically send a summary of the purchase for informational purposes, while optionally using the Personalization Engine to include customized offers and other user-specific content. You will need to specify this template in your Purchase API calls.\n- Abandoned Cart Emails\nReclaim your revenue by setting up automatic shopping cart reminders to remind users of items they left behind, using an Abandoned Cart template. Product information is automatically pulled into an Abandoned Cart template when you keep in sync with cart and purchase activity using the Purchase API. For more information, see Abandoned Shopping Carts.\nCampaign Email Messages\n- Dynamic Recurring Newsletters\nDeliver an individually curated experience to each of your customers based on real-time behavior and interests. Set up a newsletter-style template powered by a content feed, make it recurring, and send the right content to the right user, each and every time. In addition to your template, you'll also need to Create a Horizon Data Feed and Template and Set Up A Recurring Campaign\nUsing Templates\nOnce an email template has been created, visual or html, it can be used in the rest of the system.\nLifecycle Optimizer\nYou will need to select templates in Lifecycle Optimizer for any of its email-related actions. Lifecycle Optimizer is ideal for user-specific triggered or transactional emails like a welcome series, purchase confirmation, winback message, or password reset. To start a flow from an email send, open, or click you will need to select the relevant starting action. You will be presented with a list of the templates in your account representing your emails. Choose the appropriate email's template. To send an email as an action, you will again be presented with the list of templates in your account including both visual and html emails.\nCampaigns\nIndividual mass mailings can be built from scratch or they can be partially created using a template to configure the email. Campaigns will accept both visual and html templates, however, Campaigns don't support the Email Composer tool so subsequent changes will be HTML only. To use a template in campaigns, create a new campaign. Name it and select the type of campaign. Templates are supported in all campaign types: Regular, A/B Tests, and Recurring. After your campaign is created, navigate to the Configure tab. The first option is to \"Build Your Campaign From a Template\". Select this and choose the template from the dropdown. Choose \"Dynamic\" if you want the email rendered uniquely for every user or \"Static\" if any dynamic elements should be rendered before the send. If you do not know, dynamic is generally what you will want. Choosing a template will overwrite the existing campaign fields with the template's settings. This includes the subject line, from name & email, as well as the HTML of the email. This however does not happen in the other direction. Changes made in the campaign builder will only apply to that campaign and will not affect the template.\nAPI\nTriggered/transactional email can also be sent using the Send API when specifying one or more recipients and the name of a template. See the documentation for more details on the Send API.\nEmojis\nEmojis used in your templates should display properly for all email providers and platforms. There are two instances in which they might not display:\n- The emoji is a custom emoji. This will only show on devices with the emoji installed.\n- The subscriber has an older machine, for example, one that hasn't had a browser or OS update since 2016."
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    },
+    {
+    }
+]
